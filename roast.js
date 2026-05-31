@@ -71,7 +71,7 @@ async function runRoast() {
       method: 'POST',
       headers: {
   'Content-Type': 'application/json',
-  'x-api-key': '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',
+  'x-api-key': `const apiKey = process.env.CLAUDE_API_KEY;`,
   'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({

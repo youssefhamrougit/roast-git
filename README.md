@@ -1,25 +1,8 @@
-# 🔥 UI Roast
-
-> Drop any UI screenshot. Get brutal, specific, AI-powered design feedback.
-
-Built for Hack Club 7-Country Hackathon.
-
----
-
-## Setup (2 minutes)
-
-### 1. Get a Claude API key
-Go to [console.anthropic.com](https://console.anthropic.com), sign up, and create an API key.
-
-### 2. Add your key
-Open `src/components/roast.js` and find the `fetch` call to `api.anthropic.com`. 
-
-The API key is handled automatically when running via the Anthropic API — but if you're self-hosting or running locally, add a header:
 
 ```js
 headers: {
   'Content-Type': 'application/json',
-  'x-api-key': 'YOUR_KEY_HERE',          // add this
+  'x-api-key': 'const apiKey = process.env.CLAUDE_API_KEY;',          // add this
   'anthropic-version': '2023-06-01',     // add this
   'anthropic-dangerous-direct-browser-access': 'true'  // required for browser
 },
