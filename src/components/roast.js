@@ -73,7 +73,7 @@ async function runRoast() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': "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",
+        'x-api-key': "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",
         'anthropic-version': '2023-06-01',
         'anthropic-dangerous-direct-browser-access': 'true'
       },
