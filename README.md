@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 ```js
 headers: {
   'Content-Type': 'application/json',
@@ -26,6 +27,8 @@ npx vercel
 ```
 
 ---
+=======
+>>>>>>> 25cd270957b37e1666a2bc2137ea1ba9d5e3f970
 
 ## File Structure
 
