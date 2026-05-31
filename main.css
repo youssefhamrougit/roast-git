@@ -438,7 +438,6 @@ section, header, footer {
   border: 0.5px solid rgba(93,187,126,0.3);
 }
 
-.issue-body {}
 .issue-title {
   font-size: 14px;
   font-weight: 500;
@@ -505,7 +504,6 @@ section, header, footer {
   gap: 2rem;
 }
 
-.step {}
 .step-num {
   font-family: var(--font-mono);
   font-size: 11px;
