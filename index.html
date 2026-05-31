@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI Roast — Brutal Design Feedback</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/styles/main.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-mark">🔥</span>
+        <span class="logo-text">UI Roast</span>
+      </div>
+      <nav class="nav">
+        <a href="#how" class="nav-link">how it works</a>
+        <a href="https://github.com" target="_blank" class="nav-link">github ↗</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-eyebrow">design feedback, weaponized</div>
+      <h1 class="hero-title">
+        Drop your UI.<br/>
+        <em>Get roasted.</em>
+      </h1>
+      <p class="hero-sub">
+        Upload any screenshot and get brutally specific, AI-powered design critique — 
+        scored by category, with exact fixes you can act on immediately.
+      </p>
+    </section>
+
+    <!-- UPLOAD ZONE -->
+    <section class="upload-section">
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="fileInput" accept="image/*" hidden />
+        <div class="upload-idle" id="uploadIdle">
+          <div class="upload-icon">⬆</div>
+          <p class="upload-title">drop a screenshot here</p>
+          <p class="upload-hint">or <button class="upload-browse" onclick="document.getElementById('fileInput').click()">browse files</button></p>
+          <p class="upload-formats">PNG, JPG, WEBP — any UI works</p>
+        </div>
+        <div class="upload-preview" id="uploadPreview" style="display:none;">
+          <img id="previewImg" src="" alt="uploaded UI" />
+          <button class="change-btn" onclick="resetUpload()">change image</button>
+        </div>
+      </div>
+
+      <button class="roast-btn" id="roastBtn" disabled onclick="runRoast()">
+        <span class="roast-btn-text">roast this UI</span>
+        <span class="roast-btn-arrow">→</span>
+      </button>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="results-section" id="resultsSection" style="display:none;">
+      <div class="results-header">
+        <h2 class="results-title">the verdict</h2>
+        <div class="overall-score" id="overallScore">—</div>
+      </div>
+
+      <div class="scores-grid" id="scoresGrid">
+        <!-- score cards injected by JS -->
+      </div>
+
+      <div class="summary-card" id="summaryCard">
+        <!-- summary injected by JS -->
+      </div>
+
+      <div class="issues-list" id="issuesList">
+        <!-- issues injected by JS -->
+      </div>
+
+      <div class="results-actions">
+        <button class="action-btn" onclick="resetAll()">roast another</button>
+        <button class="action-btn action-btn--primary" onclick="copyResults()">copy results</button>
+      </div>
+    </section>
+
+    <!-- LOADING -->
+    <section class="loading-section" id="loadingSection" style="display:none;">
+      <div class="loading-inner">
+        <div class="loading-flame">🔥</div>
+        <p class="loading-text" id="loadingText">analyzing your design...</p>
+        <div class="loading-bar"><div class="loading-fill" id="loadingFill"></div></div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section" id="how">
+      <h2 class="how-title">how it works</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3 class="step-title">upload</h3>
+          <p class="step-desc">Drop any UI screenshot — website, app, dashboard, anything with pixels on screen.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3 class="step-title">analyze</h3>
+          <p class="step-desc">Claude's vision model examines your design across 6 dimensions: hierarchy, spacing, color, typography, contrast, and UX.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3 class="step-title">roast</h3>
+          <p class="step-desc">Get a scored breakdown with specific issues and concrete fixes — not vague advice, actual actionable critique.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>built for hack club · powered by claude api · no designs stored</p>
+    </footer>
+
+  </div>
+
+  <script src="src/components/upload.js"></script>
+  <script src="src/components/roast.js"></script>
+  <script src="src/components/render.js"></script>
+</body>
+</html>
