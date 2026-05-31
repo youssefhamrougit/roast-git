@@ -1,4 +1,3 @@
-// roast.js — sends image to Claude API and parses structured feedback
 
 const SYSTEM_PROMPT = `You are a brutally honest, expert UI/UX design critic with 15 years of experience at top design firms. You give specific, actionable critique — never vague platitudes.
 
@@ -44,6 +43,9 @@ const LOADING_MESSAGES = [
   'preparing the roast...',
 ];
 
+// API key (may be injected via environment in some runtimes)
+const apiKey = (typeof process !== 'undefined' && process.env && process.env.CLAUDE_API_KEY) || '';
+
 async function runRoast() {
   if (!uploadedImageBase64) return;
 
@@ -70,9 +72,10 @@ async function runRoast() {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
-  'Content-Type': 'application/json',
-  'x-api-key': `const apiKey = process.env.CLAUDE_API_KEY;`,
-  'anthropic-version': '2023-06-01'
+        'Content-Type': 'application/json',
+        'x-api-key': "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",
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
