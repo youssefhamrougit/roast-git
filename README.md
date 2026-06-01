@@ -1,34 +1,5 @@
 
-<<<<<<< HEAD
-```js
-headers: {
-  'Content-Type': 'application/json',
-  'x-api-key': 'const apiKey = process.env.CLAUDE_API_KEY;',          // add this
-  'anthropic-version': '2023-06-01',     // add this
-  'anthropic-dangerous-direct-browser-access': 'true'  // required for browser
-},
-```
-
-### 3. Run it
-Since it's pure HTML/CSS/JS with no build step, just open `index.html` in a browser — or use a local server:
-
-```bash
-npx serve .
-# or
-python3 -m http.server 3000
-```
-
-### 4. Deploy
-```bash
-# Vercel (recommended)
-npx vercel
-
-# or just drag the folder to vercel.com
-```
-
----
-=======
->>>>>>> 25cd270957b37e1666a2bc2137ea1ba9d5e3f970
+### note ; for this to work i need 5 dollars of claude credit :(
 
 ## File Structure
 
