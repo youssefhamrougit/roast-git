@@ -39,7 +39,6 @@ ui-roast/
 
 ## Stack
 
-- Vanilla HTML, CSS, JavaScript — no framework, no build step
+- Vanilla HTML, CSS, JavaScript 
 - Claude Sonnet 4 via Anthropic API (vision)
 - Google Fonts (DM Serif Display, DM Mono, Geist)
-- Deploys anywhere static files work (Vercel, Netlify, GitHub Pages)
