@@ -102,7 +102,9 @@ async function runRoast() {
     });
 
     const data = await response.json();
-    const rawText = data.content.map(b => b.text || '').join('');
+console.log('API response:', JSON.stringify(data));
+if (!data.content) throw new Error(JSON.stringify(data));
+const rawText = data.content.map(b => b.text || '').join('');
     const cleaned = rawText.replace(/```json|```/g, '').trim();
     const result = JSON.parse(cleaned);
 
